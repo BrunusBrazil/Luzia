@@ -147,9 +147,7 @@ public class MainActivity extends ActionBarActivity implements OnTaskCompleted, 
              */
         (new GetAddressTask(getApplicationContext(),this)).execute(location);
         }
-	  
-
-
+	     
 	@Override
 	public void onProviderDisabled(String provider) {
 		Toast.makeText(this, "Disabled provider " + provider,
