@@ -1,0 +1,56 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/lusia_fundo"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.fatec.itu.santa_luzia01.MainActivity" >
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/linearlayout_bg"
+         >
+
+        <Button
+            android:id="@+id/btnRua"
+            style="@style/ButtonText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:background="@drawable/b_shape_rua"
+            android:padding="50dp"
+            android:text="@string/b_rua"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/btnBairro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:padding="50dp"
+            android:text="@string/b_bairro" 
+            style="@style/ButtonText"
+            android:background="@drawable/b_shape_bairro"
+            />
+
+        <Button
+            android:id="@+id/btnCidade"
+            style="@style/ButtonText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:background="@drawable/b_shape_cidade"
+            android:padding="50dp"
+            android:text="@string/b_cidade" />
+
+    </LinearLayout>
+
+</RelativeLayout>
