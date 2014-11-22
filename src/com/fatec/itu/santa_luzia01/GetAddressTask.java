@@ -54,16 +54,9 @@ public class GetAddressTask extends AsyncTask<Location, Void, String>{
                  * Return 1 address.
                  */
             	
-            	
-            	if(Geocoder.isPresent()){
-            		System.out.println("yes");
-            	}
-            	
                 addresses = geocoder.getFromLocation(loc.getLatitude(), loc.getLongitude(), 1);
-                
                 System.out.println(addresses.get(0));
-                System.out.println(loc.getLatitude());
-                System.out.println(loc.getLongitude());
+                ;
 
             } catch (IOException e1) {
             Log.e("LocationSampleActivity","IO Exception in getFromLocation()");

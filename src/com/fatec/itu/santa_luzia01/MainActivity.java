@@ -23,12 +23,9 @@ public class MainActivity extends ActionBarActivity implements OnTaskCompleted, 
 	private Button bCidade;
 	private Button bRua;
 	private Button bBairro;
-	
-	//This 3 fields represent the value returned by the ascy task
-	protected String cidade = "Calculing";
-	private String rua = "Calculing";
-	private String bairro = "Calculing";
 
+	private Localidade localidade;
+	
     private LocationManager locationManager;
 	private String provider;
 	
@@ -55,24 +52,23 @@ public class MainActivity extends ActionBarActivity implements OnTaskCompleted, 
 		bBairro.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				speaktext("Chelsea", 0);
+				speaktext(localidade.getBairro(), 0);
 			}
 		});
 		
 		bCidade.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				speaktext("London", 0);
+				speaktext(localidade.getCidade(), 0);
 			}
 		});
 		
 		bRua.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				speaktext("Green Street", 0);
+				speaktext(localidade.getRua(), 0);
 			}
 		});
-	
 	
 		//Get the location manager
 		locationManager =  (LocationManager) getSystemService(LOCATION_SERVICE);
@@ -145,8 +141,8 @@ public class MainActivity extends ActionBarActivity implements OnTaskCompleted, 
              * When the task finishes,
              * onPostExecute() displays the address.
              */
-        (new GetAddressTask(getApplicationContext(),this)).execute(location);
-        }
+        (new GetAddressTask(this,this)).execute(location);
+     }
 	     
 	@Override
 	public void onProviderDisabled(String provider) {
@@ -168,7 +164,7 @@ public class MainActivity extends ActionBarActivity implements OnTaskCompleted, 
 
 	@Override
 	public void onTaskCompleted(String address) {
-        System.out.println(address);
+    	 this.localidade = new Localidade(address);
 	}
 	
 }
