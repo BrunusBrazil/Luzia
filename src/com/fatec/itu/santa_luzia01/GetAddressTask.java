@@ -26,7 +26,6 @@ public class GetAddressTask extends AsyncTask<Location, Void, String>{
 	 this.context = context; 
 	 this.listener = listener;
 	}	
-
 		
 	/**
      * Get a Geocoder instance, get the latitude and longitude
@@ -48,7 +47,6 @@ public class GetAddressTask extends AsyncTask<Location, Void, String>{
             // Create a list to contain the result address
             List<Address> addresses = null;
             
-            
             try {
                 /*
                  * Return 1 address.
@@ -56,9 +54,7 @@ public class GetAddressTask extends AsyncTask<Location, Void, String>{
             	
                 addresses = geocoder.getFromLocation(loc.getLatitude(), loc.getLongitude(), 1);
                 System.out.println(addresses.get(0));
-                ;
-
-            } catch (IOException e1) {
+           } catch (IOException e1) {
             Log.e("LocationSampleActivity","IO Exception in getFromLocation()");
             e1.printStackTrace();
             return ("IO Exception trying to get address");
@@ -79,8 +75,7 @@ public class GetAddressTask extends AsyncTask<Location, Void, String>{
 			 * Format the first line of address (if available), city, and
 			 * country name.
 			 */
-			String addressText = String.format(
-					"%s, %s, %s, %s",
+			String addressText = String.format(	"%s, %s, %s, %s",
 					// If there's a street address, add it
 					address.getMaxAddressLineIndex() > 0 ? address
 							.getAddressLine(0) : "",
