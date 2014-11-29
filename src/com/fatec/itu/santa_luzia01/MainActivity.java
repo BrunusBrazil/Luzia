@@ -120,15 +120,19 @@ public class MainActivity extends ActionBarActivity implements OnTaskCompleted, 
 
 	@Override
 	public void onResume() {
-		super.onResume();
 		locationManager.requestLocationUpdates(provider,400, 1, this);
+		super.onResume();
 	}
 
 	/* Remove the locationlistener updates when Activity is paused */
 	  @Override
 	  protected void onPause() {
-	    super.onPause();
 	    locationManager.removeUpdates(this);
+	      if(tts !=null){
+        	  tts.stop();
+         	  tts.shutdown();
+              }
+	     super.onPause();
 	 }
 	  
 	
